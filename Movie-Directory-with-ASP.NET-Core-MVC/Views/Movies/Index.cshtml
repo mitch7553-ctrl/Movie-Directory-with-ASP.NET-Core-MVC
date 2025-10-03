@@ -1,0 +1,14 @@
+﻿@using Movie_Directory_with_ASP.NET_Core_MVC.Models
+@model IEnumerable<Movies>
+
+<h1>Movie List</h1>
+<ul class="list-group">
+    @foreach (var movie in Model)
+    {
+        <li class="list-group-item">
+            <a asp-action="Details" asp-route-id="@movie.Id">
+                @movie.Title (@movie.Year) - Rating: @movie.Rating
+            </a>
+        </li>
+    }
+</ul>
